@@ -1,45 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 const Buttons = (props) => {
-  function Functionality(number) {
-    if (props.result === 0) {
-      props.setResult(number);
-    } else if (number === 'C') {
-      props.setResult('');
+  const [operator, setOperator] = useState(null);
+  function HandleClick(value) {
+    if (value === "C") {
+      props.setResult(0)
+    } else if (props.result === 0) {
+      props.setResult(value);
     } else {
-      props.setResult(`${props.result}${number}`);
+      props.setResult(`${props.result}${value}`);
+    }
+  }
+  function solveProblem() {
+    try {
+      let answer = eval(props.result);
+      return props.setResult(answer);
+    } catch (error) {
+      props.setResult(0);
     }
   }
   return (
     <div>
       <div className="row1">
-        <button onClick={() => Functionality('C')}>C</button>
-        <button>()</button>
-        <button>%</button>
-        <button>&divide;</button>
+        <button onClick={() => HandleClick("C")}>C</button>
+        <button onClick={() => HandleClick(" ( ")}>(</button>
+        <button onClick={() => HandleClick(" ) ")}>)</button>
+        <button onClick={() => HandleClick(" / ")}>&divide;</button>
       </div>
       <div className="row2">
-        <button onClick={() => Functionality(7)}>7</button>
-        <button onClick={() => Functionality(8)}>8</button>
-        <button onClick={() => Functionality(9)}>9</button>
-        <button>&times;</button>
+        <button onClick={() => HandleClick(7)}>7</button>
+        <button onClick={() => HandleClick(8)}>8</button>
+        <button onClick={() => HandleClick(9)}>9</button>
+        <button onClick={() => HandleClick(" * ")}>&times;</button>
       </div>
       <div className="row3">
-        <button onClick={() => Functionality(4)}>4</button>
-        <button onClick={() => Functionality(5)}>5</button>
-        <button onClick={() => Functionality(6)}>6</button>
-        <button>&minus;</button>
+        <button onClick={() => HandleClick(4)}>4</button>
+        <button onClick={() => HandleClick(5)}>5</button>
+        <button onClick={() => HandleClick(6)}>6</button>
+        <button onClick={() => HandleClick(" - ")}>&minus;</button>
       </div>
       <div className="row4">
-        <button onClick={() => Functionality(1)}>1</button>
-        <button onClick={() => Functionality(2)}>2</button>
-        <button onClick={() => Functionality(3)}>3</button>
-        <button>+</button>
+        <button onClick={() => HandleClick(1)}>1</button>
+        <button onClick={() => HandleClick(2)}>2</button>
+        <button onClick={() => HandleClick(3)}>3</button>
+        <button onClick={() => HandleClick(" + ")}>+</button>
       </div>
       <div className="row5">
-        <button>+/-</button>
-        <button onClick={() => Functionality(0)}>0</button>
-        <button onClick={() => Functionality(".")}>.</button>
-        <button>=</button>
+        <button onClick={() => HandleClick(" ")}>-/+</button>
+        <button onClick={() => HandleClick(0)}>0</button>
+        <button onClick={() => HandleClick(".")}>.</button>
+        <button onClick={() => solveProblem()}>=</button>
       </div>
     </div>
   );

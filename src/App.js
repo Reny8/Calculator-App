@@ -5,7 +5,7 @@ function App() {
   const [result, setResult] = useState(0);
   return (
     <div className="app">
-      <input value={result} />
+      <input value={result} onChange={(e) => setResult(e.target.value)} />
       <Buttons result={result} setResult={setResult} />
     </div>
   );

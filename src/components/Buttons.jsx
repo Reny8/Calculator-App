@@ -1,7 +1,7 @@
 import React from "react";
 const Buttons = (props) => {
   function Functionality(number) {
-    if (props.result === '') {
+    if (props.result === 0) {
       props.setResult(number);
     } else if (number === 'C') {
       props.setResult('');

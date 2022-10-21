@@ -10,13 +10,18 @@ const Buttons = (props) => {
     }
   }
   function solveProblem() {
-    let answer = eval(props.result);
-    if (answer) {
-      props.setResult(answer);
-    } else {
-      return (answer = 0);
+    try {
+      let answer = eval(props.result);
+      if (answer) {
+        props.setResult(answer);
+      } else {
+        return (answer = 0);
+      }
+      return answer;
+    } catch (error) {
+      props.setResult(0);
+      return 0;
     }
-    return answer;
   }
 
   function convertToPercent() {

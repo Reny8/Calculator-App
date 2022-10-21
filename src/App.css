@@ -1,6 +1,12 @@
-/* html body {
-  background-color: black
-} */
-div.app {
-  max-width: 600px
-}
+  html body {
+    background-color: black;
+    max-width: 100%;
+    font-family: Agency FB;
+  }
+  /* div.app {
+    max-width: 600px
+  } */
+
+  input {
+    width:100%
+  }

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 const Buttons = (props) => {
-  const [operator, setOperator] = useState(null);
   function HandleClick(value) {
     if (value === "C") {
-      props.setResult(0)
+      props.setResult(0);
     } else if (props.result === 0) {
       props.setResult(value);
     } else {
@@ -11,12 +10,19 @@ const Buttons = (props) => {
     }
   }
   function solveProblem() {
-    try {
-      let answer = eval(props.result);
-      return props.setResult(answer);
-    } catch (error) {
-      props.setResult(0);
+    let answer = eval(props.result);
+    if (answer) {
+      props.setResult(answer);
+    } else {
+      return (answer = 0);
     }
+    return answer;
+  }
+
+  function convertToPercent() {
+    let solve = solveProblem();
+    let final = solve / 100;
+    props.setResult(final);
   }
   return (
     <div>
@@ -45,7 +51,7 @@ const Buttons = (props) => {
         <button onClick={() => HandleClick(" + ")}>+</button>
       </div>
       <div className="row5">
-        <button onClick={() => HandleClick(" ")}>-/+</button>
+        <button onClick={() => convertToPercent()}>%</button>
         <button onClick={() => HandleClick(0)}>0</button>
         <button onClick={() => HandleClick(".")}>.</button>
         <button onClick={() => solveProblem()}>=</button>

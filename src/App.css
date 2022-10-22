@@ -1,8 +1,10 @@
 html body {
   background-color: black;
-  max-width: 100%;
   font-family: Agency FB;
   font-size: 70px;
+}
+html {
+  max-width: 425px;
 }
 
 div.app input {
@@ -42,4 +44,4 @@ div.buttons-container div button.operators {
 
 div.buttons-container div button.numbers {
   color: rgb(1, 71, 1);
-}
+}  

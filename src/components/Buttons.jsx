@@ -16,7 +16,7 @@ const Buttons = (props) => {
       if (answer) {
         props.setResult(answer);
       } else {
-        return (answer = 0);
+        return 0;
       }
       return answer;
     } catch (error) {

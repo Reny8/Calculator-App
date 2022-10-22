@@ -2,11 +2,18 @@
     background-color: black;
     max-width: 100%;
     font-family: Agency FB;
+    font-size: 70px
   }
-  /* div.app {
-    max-width: 600px
-  } */
 
-  input {
-    width:100%
+  div.app input {
+    width:100%;
+    height: 6rem;
+    background-color:transparent;
+    border:none;
+    color: rgb(130, 128, 128)
+  }
+ div.app hr {
+    border-top:2px solid rgb(130, 128, 128);
+    opacity:1;
+    margin-top:0
   }

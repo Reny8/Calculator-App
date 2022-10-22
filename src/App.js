@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="app">
       <input value={result} onChange={(e) => setResult(e.target.value)} />
+      <hr/>
       <Buttons result={result} setResult={setResult} />
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../App.css"
 const Buttons = (props) => {
   function HandleClick(value) {
     if (value === "C") {
@@ -30,32 +31,32 @@ const Buttons = (props) => {
     props.setResult(final);
   }
   return (
-    <div>
-      <div className="row1">
+    <div className="buttons-container">
+      <div>
         <button onClick={() => HandleClick("C")}>C</button>
         <button onClick={() => HandleClick(" ( ")}>(</button>
         <button onClick={() => HandleClick(" ) ")}>)</button>
         <button onClick={() => HandleClick(" / ")}>&divide;</button>
       </div>
-      <div className="row2">
+      <div>
         <button onClick={() => HandleClick(7)}>7</button>
         <button onClick={() => HandleClick(8)}>8</button>
         <button onClick={() => HandleClick(9)}>9</button>
         <button onClick={() => HandleClick(" * ")}>&times;</button>
       </div>
-      <div className="row3">
+      <div>
         <button onClick={() => HandleClick(4)}>4</button>
         <button onClick={() => HandleClick(5)}>5</button>
         <button onClick={() => HandleClick(6)}>6</button>
         <button onClick={() => HandleClick(" - ")}>&minus;</button>
       </div>
-      <div className="row4">
+      <div>
         <button onClick={() => HandleClick(1)}>1</button>
         <button onClick={() => HandleClick(2)}>2</button>
         <button onClick={() => HandleClick(3)}>3</button>
         <button onClick={() => HandleClick(" + ")}>+</button>
       </div>
-      <div className="row5">
+      <div>
         <button onClick={() => convertToPercent()}>%</button>
         <button onClick={() => HandleClick(0)}>0</button>
         <button onClick={() => HandleClick(".")}>.</button>

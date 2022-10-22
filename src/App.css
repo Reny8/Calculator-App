@@ -11,7 +11,7 @@ div.app input {
   background-color: transparent;
   border: none;
   color: rgb(130, 128, 128);
-  padding-left:1rem;
+  padding-left: 1rem;
 }
 div.app hr {
   border-top: 2px solid rgb(130, 128, 128);
@@ -31,6 +31,15 @@ div.buttons-container div button {
   align-items: center;
   justify-content: center;
   height: 5.5rem;
-  border-radius:100%;
-  font-size:50px
+  border-radius: 100%;
+  font-size: 50px;
+  background-color: rgb(130, 128, 128);
+}
+
+div.buttons-container div button.operators {
+  color: #ffb913;
+}
+
+div.buttons-container div button.numbers {
+  color: rgb(1, 71, 1);
 }

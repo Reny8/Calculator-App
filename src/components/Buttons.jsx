@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App.css"
+import "../App.css";
 const Buttons = (props) => {
   function HandleClick(value) {
     if (value === "C") {
@@ -33,34 +33,77 @@ const Buttons = (props) => {
   return (
     <div className="buttons-container">
       <div>
-        <button onClick={() => HandleClick("C")}>C</button>
-        <button onClick={() => HandleClick(" ( ")}>(</button>
-        <button onClick={() => HandleClick(" ) ")}>)</button>
-        <button onClick={() => HandleClick(" / ")}>&divide;</button>
+        <button style={{ color: "#B40101" }} onClick={() => HandleClick("C")}>
+          C
+        </button>
+        <button className="operators" onClick={() => HandleClick(" ( ")}>
+          (
+        </button>
+        <button className="operators" onClick={() => HandleClick(" ) ")}>
+          )
+        </button>
+        <button className="operators" onClick={() => HandleClick(" / ")}>
+          &divide;
+        </button>
       </div>
       <div>
-        <button onClick={() => HandleClick(7)}>7</button>
-        <button onClick={() => HandleClick(8)}>8</button>
-        <button onClick={() => HandleClick(9)}>9</button>
-        <button onClick={() => HandleClick(" * ")}>&times;</button>
+        <button className="numbers" onClick={() => HandleClick(7)}>
+          7
+        </button>
+        <button className="numbers" onClick={() => HandleClick(8)}>
+          8
+        </button>
+        <button className="numbers" onClick={() => HandleClick(9)}>
+          9
+        </button>
+        <button className="operators" onClick={() => HandleClick(" * ")}>
+          &times;
+        </button>
       </div>
       <div>
-        <button onClick={() => HandleClick(4)}>4</button>
-        <button onClick={() => HandleClick(5)}>5</button>
-        <button onClick={() => HandleClick(6)}>6</button>
-        <button onClick={() => HandleClick(" - ")}>&minus;</button>
+        <button className="numbers" onClick={() => HandleClick(4)}>
+          4
+        </button>
+        <button className="numbers" onClick={() => HandleClick(5)}>
+          5
+        </button>
+        <button className="numbers" onClick={() => HandleClick(6)}>
+          6
+        </button>
+        <button className="operators" onClick={() => HandleClick(" - ")}>
+          &minus;
+        </button>
       </div>
       <div>
-        <button onClick={() => HandleClick(1)}>1</button>
-        <button onClick={() => HandleClick(2)}>2</button>
-        <button onClick={() => HandleClick(3)}>3</button>
-        <button onClick={() => HandleClick(" + ")}>+</button>
+        <button className="numbers" onClick={() => HandleClick(1)}>
+          1
+        </button>
+        <button className="numbers" onClick={() => HandleClick(2)}>
+          2
+        </button>
+        <button className="numbers" onClick={() => HandleClick(3)}>
+          3
+        </button>
+        <button className="operators" onClick={() => HandleClick(" + ")}>
+          +
+        </button>
       </div>
       <div>
-        <button onClick={() => convertToPercent()}>%</button>
-        <button onClick={() => HandleClick(0)}>0</button>
-        <button onClick={() => HandleClick(".")}>.</button>
-        <button onClick={() => solveProblem()}>=</button>
+        <button className="operators" onClick={() => convertToPercent()}>
+          %
+        </button>
+        <button className="numbers" onClick={() => HandleClick(0)}>
+          0
+        </button>
+        <button className="operators" onClick={() => HandleClick(".")}>
+          .
+        </button>
+        <button
+          style={{ backgroundColor: "#FFB913", color: "#707070" }}
+          onClick={() => solveProblem()}
+        >
+          =
+        </button>
       </div>
     </div>
   );
